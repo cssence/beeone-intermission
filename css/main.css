@@ -1,0 +1,354 @@
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #005593;
+    text-shadow: none;
+}
+
+::selection {
+    background: #005593;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #808080;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Screen */
+
+.chromeframe {
+    margin: 0;
+    padding: 8px 16px;
+    background: #ccc;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+}
+
+html {
+    background: #fff;
+    font-family: sans-serif;
+}
+
+.lt-ie9 .content {
+    width: 320px;
+}
+
+.lt-ie9 .vcard {
+    margin-top: 48px;
+}
+
+[role="main"] {
+    position: relative;
+}
+
+[role="main"] a {
+    color: #222;
+    text-decoration: none;
+}
+
+[role="main"] a:hover {
+    color: #e4001b;
+    text-decoration: underline;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.regular {
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.vcard abbr {
+    border-bottom: none;
+}
+
+.url {
+    display: block;
+}
+
+.logo {
+    height: 2em;
+}
+
+.note {
+    margin-top: 1em;
+    margin-bottom: 4em;
+    color: #005593;
+}
+
+.additional-info {
+    position: relative;
+    margin-top: 4em;
+    padding-right: 8em;
+    line-height: 0.8;
+}
+
+.additional-info small {
+    font-size: 75%;
+}
+
+.additional-info a {
+    display: block;
+    margin-top: 0.5em;
+}
+
+.member-of-logo {
+    width: 6em;
+}
+
+@media only screen {
+
+    .print {
+        display: none !important;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    .content {
+        padding: 2em 1em;
+    }
+
+}
+
+@media only screen and (max-width: 639px) {
+
+    .additional-info a {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+}
+
+@media only screen and (min-width: 640px) {
+
+    html {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAMAAACeL25MAAAADFBMVEXn5+fs7Ozw8PDy8vIGEBs9AAAAFElEQVQIW2NkAAJGRhDBBCKYgQQAAHIAC4uLDFAAAAAASUVORK5CYII=) top left repeat;
+    }
+
+    [role="main"] {
+        width: 31.5em;
+        margin-top: 2em;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0.125em 0.125em rgba(0,0,0,0.25);
+        box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.25);
+    }
+
+    .vcard {
+        width: 18em;
+        margin-left: 13.5em;
+        margin-bottom: -0.2em;
+    }
+
+    .url {
+        position: absolute;
+        left: 2em;
+        top: 2em;
+    }
+
+    .note {
+        line-height: 1;
+    }
+
+    .note::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        margin-left: -2em;
+        width: 0.65em;
+        height: 1.1em;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAsBAMAAACJR7VNAAAAJ1BMVEUAVZMQYJogaqEwdadAgK5QirVglbx/qsmfv9a/1OTf6vHv9Pj////DgyBMAAAAtUlEQVQoz03SqxHCQABF0RdgQkDhQVAARaSACEpIAQgcAkQKiEgBERSAwaMyGUjIKwqzw95Ve8Sd/cocitPxcoU6FVClFtrP0Q3KoE4HqFIN5TOsNyqDeh2gRjWUz7DPURnUawc1ukHH5BX11RKnfWsL3XWDyuQVFbKgkAWFLKjUI2pSitv9aA09dYLOIbNsT5sUr/LPLGYWM4uZZQ9aQZ0KqFIL7Rf4BcgsZhYzi5nFjH/J9g+iaIzs3DYfLAAAAABJRU5ErkJggg==) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .additional-info {
+        position: absolute;
+        width: 6em;
+        left: 2em;
+        bottom: 2em;
+    }
+
+}
+
+@media only screen and (min-width: 800px) { html { font-size: 20px; } }
+@media only screen and (min-width: 960px) { html { font-size: 24px; } }
+@media only screen and (min-width: 1120px) { html { font-size: 28px; } }
+@media only screen and (min-width: 1280px) { html { font-size: 32px; } }
+@media only screen and (min-width: 1440px) { html { font-size: 36px; } }
+@media only screen and (min-width: 1600px) { html { font-size: 40px; } }
+@media only screen and (min-width: 1760px) { html { font-size: 44px; } }
+@media only screen and (min-width: 1920px) { html { font-size: 48px; } }
+@media only screen and (min-width: 2080px) { html { font-size: 52px; } }
+@media only screen and (min-width: 2240px) { html { font-size: 56px; } }
+@media only screen and (min-width: 2400px) { html { font-size: 60px; } }
+
+/* */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* Print */
+
+@media print {
+
+    .screen {
+        display: none !important;
+    }
+
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    [role="main"] {
+        width: auto !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: none;
+    }
+
+    /*a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }*/
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
