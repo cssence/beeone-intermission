@@ -57,7 +57,7 @@ textarea {
 
 html {
     background: #fff;
-    font-family: sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .lt-ie9 .content {
@@ -184,7 +184,10 @@ html {
     }
 
     .note {
-        line-height: 1;
+        background: url(../img/tagline.png) left center no-repeat;
+        background-size: 100% auto;
+        direction: ltr;
+        text-indent: -999em;
     }
 
     .note::before {
