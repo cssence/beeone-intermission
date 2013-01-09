@@ -65,16 +65,6 @@ html {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.lt-ie9 .content {
-    width: 320px;
-    margin: 0 auto;
-    padding: 2em 1em;
-}
-
-.lt-ie9 .vcard {
-    margin-top: 48px;
-}
-
 [role="main"] {
     position: relative;
     padding: 2em;
@@ -132,6 +122,19 @@ html {
 
 .member-of-logo {
     width: 6em;
+}
+
+.lt-ie9 .content {
+    width: 352px;
+    margin: 0 auto;
+}
+
+.lt-ie9 .vcard {
+    margin-top: 48px;
+}
+
+.ie-lt9 .print {
+    display: none !important;
 }
 
 @media only screen {
