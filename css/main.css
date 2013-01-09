@@ -55,6 +55,11 @@ textarea {
     text-align: center;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 html {
     background: #fff;
     font-family: 'Source Sans Pro', sans-serif;
@@ -62,6 +67,8 @@ html {
 
 .lt-ie9 .content {
     width: 320px;
+    margin: 0 auto;
+    padding: 2em 1em;
 }
 
 .lt-ie9 .vcard {
@@ -70,6 +77,7 @@ html {
 
 [role="main"] {
     position: relative;
+    padding: 2em;
 }
 
 [role="main"] a {
@@ -80,11 +88,6 @@ html {
 [role="main"] a:hover {
     color: #e4001b;
     text-decoration: underline;
-}
-
-.content {
-    margin: 0 auto;
-    padding: 2em;
 }
 
 .regular {
@@ -141,7 +144,7 @@ html {
 
 @media only screen and (max-width: 320px) {
 
-    .content {
+    [role="main"] {
         padding: 2em 1em;
     }
 
@@ -163,12 +166,29 @@ html {
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAMAAACeL25MAAAADFBMVEXn5+fs7Ozw8PDy8vIGEBs9AAAAFElEQVQIW2NkAAJGRhDBBCKYgQQAAHIAC4uLDFAAAAAASUVORK5CYII=) top left repeat;
     }
 
+    .content {
+        height: 100%;
+        text-align: center;
+    }
+
+    .content:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em;
+    }
+
     [role="main"] {
+        display: inline-block;
         width: 31.5em;
         margin-top: 2em;
+        margin-bottom: 2em;
         background-color: #fff;
         -webkit-box-shadow: 0 0.125em 0.125em rgba(0,0,0,0.25);
         box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.25);
+        vertical-align: middle;
+        text-align: left;
     }
 
     .vcard {
