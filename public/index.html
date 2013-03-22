@@ -27,20 +27,21 @@
                     </div>
                     <div><span class="email">office<abbr title="at">&#64;</abbr>beeone<abbr title="dot">&#46;</abbr>at</span></div>
                 </div>
+                <!--div class="latest-news"><hr class="print"/><a href="#job" class="job-offer rotate">Job offer</a></div-->
                 <div class="additional-info"><hr class="print"/><small>Member of Erste&nbsp;Group <a href="http://www.erstegroup.com/"><img class="parent-logo" src="img/logo_erstegroup.png" alt=""/></a></small></div>
             </div>
         </div>
         <script>//<![CDATA
 (function (d) {
-    if ("querySelectorAll" in d) {
+    if ("querySelectorAll" in d && "textContent" in d) {
         var swap = d.querySelectorAll("[class=\"email\"]"), target, s, a, i;
         for (i = swap.length - 1; i >= 0; --i) {
             s = swap[i];
-            target = s.innerText;
+            target = s.textContent;
             a = d.createElement("a");
             a.className = "email";
             a.href = "mail" + "to:" + target;
-            a.innerText = target;
+            a.textContent = target;
             s.parentNode.replaceChild(a, s);
         }
     }
