@@ -10,8 +10,8 @@
     <description>http://www.beeone.at/</description>
 
     <scm>
-        <connection>scm:git:ssh://git@source.beeone.at:7999/PR/website</connection>
-        <developerConnection>scm:git:ssh://git@source.beeone.at:7999/PR/website</developerConnection>
+        <connection>scm:git:ssh://git@source.beeone.lan:7999/PR/website</connection>
+        <developerConnection>scm:git:ssh://git@source.beeone.lan:7999/PR/website</developerConnection>
     </scm>
 
     <build>
