@@ -107,7 +107,6 @@ html {
 .additional-info {
     position: relative;
     margin-top: 4em;
-    padding-right: 8em;
     line-height: 0.8;
 }
 
@@ -141,6 +140,10 @@ html {
 
     .print {
         display: none !important;
+    }
+
+    .additional-info {
+        padding-right: 8em;
     }
 
     .job-offer,
