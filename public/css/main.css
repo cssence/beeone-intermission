@@ -146,9 +146,9 @@ html {
         padding-right: 8em;
     }
 
-    .job-offer,
-    .job-offer::before,
-    .job-offer::after {
+    .about-us,
+    .about-us::before,
+    .about-us::after {
         position: absolute;
         width: 4em;
         height: 4em;
@@ -167,15 +167,18 @@ html {
         background-image: radial-gradient(ellipse at center,  #35aa23 0%,#a6e22e 67%,#a6e22e 100%);
     }
 
-    .job-offer {
+    .about-us {
+        opacity: 0.33;
         right: 2em;
         bottom: 2em;
-        padding: 0.5em;
+        padding: 1em 0.5em 0;
         font-size: 1em;
         font-weight: bold;
         color: #FFF !important;
+        line-height: 1.125;
         text-align: center;
         text-decoration: none !important;
+        text-transform: uppercase;
         text-shadow: 0 -0.125em 0.5em rgba(0,0,0,0.5), 0 0.0625em #35aa23;
         -moz-transform: rotate(15deg);
         -webkit-transform: rotate(15deg);
@@ -184,8 +187,8 @@ html {
         transform: rotate(15deg);
     }
 
-    .job-offer::before,
-    .job-offer::after {
+    .about-us::before,
+    .about-us::after {
         content: "";
         left: 0;
         top: 0;
@@ -197,12 +200,16 @@ html {
         transform: rotate(60deg);
     }
 
-    .job-offer::before {
+    .about-us::before {
         -moz-transform: rotate(30deg);
         -webkit-transform: rotate(30deg);
         -ms-transform: rotate(30deg);
         -o-transform: rotate(30deg);
         transform: rotate(30deg);
+    }
+
+    .about-us:hover {
+        opacity: 1;
     }
 
     .rotate {
@@ -229,7 +236,7 @@ html {
         padding: 2em 1em;
     }
 
-    .job-offer {
+    .about-us {
         right: 1.5em;
     }
 
@@ -243,7 +250,7 @@ html {
         bottom: 0;
     }
 
-    .job-offer {
+    .about-us {
         bottom: 9em;
     }
 
