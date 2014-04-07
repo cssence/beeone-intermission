@@ -168,7 +168,6 @@ html {
     }
 
     .about-us {
-        opacity: 0.33;
         right: 2em;
         bottom: 2em;
         padding: 1em 0.5em 0;
@@ -206,10 +205,6 @@ html {
         -ms-transform: rotate(30deg);
         -o-transform: rotate(30deg);
         transform: rotate(30deg);
-    }
-
-    .about-us:hover {
-        opacity: 1;
     }
 
     .rotate {
