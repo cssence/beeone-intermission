@@ -73,7 +73,8 @@ html {
 }
 
 .vcard {
-    padding: 2em;
+    border-top: 0.25em solid #bce4fa;
+    padding: 1.75em 2em 2em;
 }
 
 .regular {
@@ -184,20 +185,33 @@ small {
 
 @media only screen and (max-width: 39.9375em) {
 
+    .vcard::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6em;
+        overflow: hidden;
+        background: url(../img/bg.jpg) center top no-repeat;
+        background-size: cover;
+    }
+
     .vcard {
+        margin-top: 6em;
         padding: 2em 1em;
     }
 
     .about-us {
-        top: 12em;
-        right: 1.5em;
+        top: 17rem;
+        right: 1.5rem;
         bottom: auto;
     }
 
     [role="contentinfo"] {
         position: relative;
-        margin: 4em -1em 0;
-        padding: 1em 1em 1em 6.5em;
+        margin: 4rem -1rem 0;
+        padding: 2.75rem 1rem 1rem;
         line-height: 2rem;
     }
     
@@ -207,8 +221,7 @@ small {
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 0.5625rem 1rem 1rem;
-        text-align: left;
+        padding: 1rem 1rem 0;
     }
 
 }
@@ -216,7 +229,8 @@ small {
 @media only screen and (min-width: 40em) {
 
     html {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAMAAACeL25MAAAADFBMVEXn5+fs7Ozw8PDy8vIGEBs9AAAAFElEQVQIW2NkAAJGRhDBBCKYgQQAAHIAC4uLDFAAAAAASUVORK5CYII=) top left repeat;
+        background: url(../img/bg.jpg) center center no-repeat;
+        background-size: cover;
     }
 
     body {
@@ -239,7 +253,7 @@ small {
         margin-top: 2em;
         margin-bottom: 2em;
         background-color: #fff;
-        box-shadow: 0 0.125em 0.25em rgba(0,0,0,0.25);
+        box-shadow: 0 0.2em 1em rgba(0,0,0,0.7);
         vertical-align: middle;
         text-align: left;
     }
@@ -265,11 +279,7 @@ small {
 }
 
 @media only screen and (min-width: 64em) { html { font-size: 20px; } }
-/*@media only screen and (min-width: 90em) { html { font-size: 24px; } }
-@media only screen and (min-width: 110em) { html { font-size: 28px; } }
-@media only screen and (min-width: 130em) { html { font-size: 32px; } }
-@media only screen and (min-width: 150em) { html { font-size: 36px; } }
-*/
+
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
