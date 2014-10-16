@@ -164,13 +164,13 @@ abbr[title] {
         left: 0;
         right: 0;
         height: 6em;
-        background: url(../img/bg.jpg) center top no-repeat;
+        background: url(../img/bg.jpg) center top no-repeat #005593;
         background-size: cover;
     }
 
     .vcard {
         margin-top: 6em;
-        padding: 1.75em 1em;
+        padding: 1.5em 1em;
     }
 
     [role] {
@@ -218,7 +218,7 @@ abbr[title] {
 @media only screen and (min-width: 40em) {
 
     html {
-        background: url(../img/bg.jpg) center center no-repeat;
+        background: url(../img/bg.jpg) center center no-repeat #005593;
         background-size: cover;
     }
 
