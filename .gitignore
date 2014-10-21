@@ -1,8 +1,8 @@
+.git*
 /node_modules/
 npm-debug.log
 ._*
 .DS_Store*
-.git*
 .Spotlight-*
 .Trashes
 ehthumbs.db
