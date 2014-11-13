@@ -9,18 +9,18 @@ html(lang="en")
 		block stylesheets
 			link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300")
 			if verbose
-				link(rel="stylesheet", href="/css/normalize.css")
-				link(rel="stylesheet", href="/css/style.css")
+				link(rel="stylesheet", href="/normalize.css")
+				link(rel="stylesheet", href="/style.css")
 			else
 				style
-					include ../public/css/main.min.css
+					include ../public/main.min.css
 		block icons
-			link(rel="icon", type="image/png", sizes="256x256", href="apple-touch-icon.png")
+			link(rel="icon", type="image/png", sizes="256x256", href="avatar.png")
 			if verbose
 				link(rel="icon", type="image/png", sizes="16x16", href="favicon.png")
 			else
 				link(rel="icon", type="image/png", sizes="16x16", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUASI0AT40AVZMNVJMAWJYMYJkJbKQwdqlDiLZom8Ckv9ayytvJ3enf5/Dv9ff+//wGy32ZAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94KDw0WO1N4EKgAAABQSURBVAjXY1CCAgb9/2DwCZkhGhpaA2Ywhxc6Qxj7/xiehzB+MbwHM0KDoyFSYcmWUDV/HddDGP+M54MZFW2G+0EMRkFBiJozZ86i2AVzBgDJFElrN+qjowAAAABJRU5ErkJggg==")
-			link(rel="apple-touch-icon", href="apple-touch-icon.png")
+			link(rel="apple-touch-icon", href="avatar.png")
 		link(rel="alternate" title="vCard", href="http://h2vx.com/vcf/https%3A//www.beeone.at/", type="text/directory")
 
 	body
@@ -30,7 +30,10 @@ html(lang="en")
 			main(role="main")
 				h1.regular
 					a.url(href="//www.beeone.at/")
-						img.logo(src="img/logo.png", alt="BeeOne")
+						if verbose
+							img.logo(src="logo.svg", alt="BeeOne")
+						else
+							include ../public/logo.svg
 				h2.regular.tagline.note
 					| The digital innovation unit of Erste&nbsp;Hub
 				div.fn.org
@@ -60,12 +63,15 @@ html(lang="en")
 				small
 					| Member of Erste&nbsp;Group
 					br
-					a(href="http://www.erstegroup.com/")
-						img.parent-logo(src="img/logo_erstegroup.svg" alt="")
+					a.parent(href="http://www.erstegroup.com/")
+						if verbose
+							img(src="logo_erstegroup.svg" alt="")
+						else
+							include ../public/logo_erstegroup.svg
 		block javascripts
 			if verbose
-				script(src="js/mailto.js")
+				script(src="mailto.js")
 			else
 				script
-					include ../public/js/main.min.js
+					include ../public/main.min.js
 

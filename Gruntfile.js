@@ -26,7 +26,7 @@ module.exports = function (grunt) {
 		uglify: {
 			js: {
 				files: {
-					'public/js/mailto.min.js': 'public/js/mailto.js'
+					'public/mailto.min.js': 'public/mailto.js'
 				}
 			}
 		},
@@ -45,12 +45,12 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: {
-					'public/js/main.min.js': ['public/js/mailto.min.js']
+					'public/main.min.js': ['public/mailto.min.js']
 				}
 			},
 			css: {
 				files: {
-					'public/css/main.min.css': ['public/css/normalize.min.css', 'public/css/style.min.css']
+					'public/main.min.css': ['public/normalize.min.css', 'public/style.min.css']
 				}
 			}
 		},
@@ -58,9 +58,9 @@ module.exports = function (grunt) {
 		cssmin: {
 			minify: {
 				expand: true,
-				cwd: 'public/css/',
+				cwd: 'public/',
 				src: ['normalize.css', 'style.css'],
-				dest: 'public/css/',
+				dest: 'public/',
 				ext: '.min.css'
 			}
 		}
@@ -78,6 +78,12 @@ module.exports = function (grunt) {
 		'Builds the project',
 		['uglify:js', 'concat:js', 'cssmin:minify', 'concat:css', 'jade:compile']
 	);
+	grunt.registerTask(
+		'minify',
+		'Creates minified files (no HTML)',
+		['uglify:js', 'concat:js', 'cssmin:minify', 'concat:css']
+	);
+
 
 	// Default task(s).
 	grunt.registerTask('default', ['build']);
