@@ -1,5 +1,6 @@
 .git*
 /public/*/*.min.*
+/public/*.html
 /node_modules/
 npm-debug.log
 ._*
