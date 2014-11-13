@@ -56,6 +56,7 @@ abbr[title] {
 .url svg,
 .url img {
 	width: 9.625em;
+	height: 2em;
 }
 
 .tagline {
@@ -71,6 +72,7 @@ abbr[title] {
 .parent svg,
 .parent img {
 	width: 6em;
+	height: 1.75em;
 	margin-top: 0.5em;
 }
 
