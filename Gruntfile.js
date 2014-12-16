@@ -29,12 +29,17 @@ module.exports = function (grunt) {
 					{expand: true, flatten: true, src: ['static/favicon.ico'], dest: '<%= pkg.paths.dist %>/'},
 					{expand: true, flatten: true, src: ['static/bg.jpg'], dest: '<%= pkg.paths.dist %>/'},
 					{expand: true, flatten: true, src: ['static/avatar*.png'], dest: '<%= pkg.paths.dist %>/'},
-					{expand: true, flatten: true, src: ['static/browserconfig.xml'], dest: '<%= pkg.paths.dist %>/'},
 					{expand: true, flatten: true, src: ['static/crossdomain.xml'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/browserconfig.xml'], dest: '<%= pkg.paths.dist %>/'},
 					{expand: true, flatten: true, src: ['static/robots.txt'], dest: '<%= pkg.paths.dist %>/'},
 					{src: ['LICENSE'], dest: '<%= pkg.paths.dist %>/'}
 				]
 			}
+		},
+
+		// clean staging directory
+		clean: {
+			build: ['<%= pkg.paths.stage %>'],
 		},
 
 		// concat files
@@ -94,12 +99,12 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		'build',
 		'Prepares project deployment (minification, concatenation)',
-		['uglify:js', 'concat:js', 'cssmin:minify', 'concat:css']
+		['clean:build', 'uglify:js', 'concat:js', 'cssmin:minify', 'concat:css']
 	);
 	grunt.registerTask(
 		'release',
 		'Deploys the project (copy assets and generate HTML)',
-		['uglify:js', 'concat:js', 'cssmin:minify', 'concat:css', 'jade:compile', 'copy:assets']
+		['clean:build', 'uglify:js', 'concat:js', 'cssmin:minify', 'concat:css', 'jade:compile', 'copy:assets']
 	);
 
 	// Default task(s).

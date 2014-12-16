@@ -6,7 +6,7 @@
 	},
 	"paths": {
 		"stage": "build",
-		"dist": "test"
+		"dist": "public"
 	},
 	"dependencies": {
 		"nconf": "0.6.x",
