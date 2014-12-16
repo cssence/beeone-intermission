@@ -4,6 +4,10 @@
 	"scripts": {
 		"start": "node vcard.js"
 	},
+	"paths": {
+		"stage": "build",
+		"dist": "test"
+	},
 	"dependencies": {
 		"nconf": "0.6.x",
 		"express": "4.9.x",
@@ -15,7 +19,7 @@
 	},
 	"devDependencies": {
 		"grunt": "0.4.x",
-		"grunt-contrib-copy": "0.7.x",
+		"grunt-contrib-copy": "~0.7.0",
 		"grunt-contrib-uglify": "0.6.x",
 		"grunt-contrib-clean": "0.6.x",
 		"grunt-contrib-jshint": "0.10.x",

@@ -16,18 +16,24 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					'public/index.html': ['views/index.jade'],
-					'public/404.html': ['views/404.jade']
+					'<%= pkg.paths.dist %>/index.html': ['views/index.jade'],
+					'<%= pkg.paths.dist %>/404.html': ['views/404.jade']
 				}
 			}
 		},
-		
-		// uglify js
-		uglify: {
-			js: {
-				files: {
-					'public/mailto.min.js': 'public/mailto.js'
-				}
+
+		// copy assets that are to-be-hosted
+		copy: {
+			assets: {
+				files: [
+					{expand: true, flatten: true, src: ['static/favicon.ico'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/bg.jpg'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/avatar*.png'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/browserconfig.xml'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/crossdomain.xml'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/robots.txt'], dest: '<%= pkg.paths.dist %>/'},
+					{src: ['LICENSE'], dest: '<%= pkg.paths.dist %>/'}
+				]
 			}
 		},
 
@@ -45,29 +51,41 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: {
-					'public/main.min.js': ['public/mailto.min.js']
+					'<%= pkg.paths.stage %>/main.min.js': ['<%= pkg.paths.stage %>/mailto.min.js']
 				}
 			},
 			css: {
 				files: {
-					'public/main.min.css': ['public/normalize.min.css', 'public/style.min.css']
+					'<%= pkg.paths.stage %>/main.min.css': ['<%= pkg.paths.stage %>/normalize.min.css', '<%= pkg.paths.stage %>/style.min.css']
 				}
 			}
 		},
 
+		// uglify js
+		uglify: {
+			js: {
+				files: {
+					'<%= pkg.paths.stage %>/mailto.min.js': 'static/mailto.js'
+				}
+			}
+		},
+
+		// minify css
 		cssmin: {
 			minify: {
 				expand: true,
-				cwd: 'public/',
+				cwd: 'static/',
 				src: ['normalize.css', 'style.css'],
-				dest: 'public/',
+				dest: '<%= pkg.paths.stage %>/',
 				ext: '.min.css'
 			}
 		}
+
 	});
 
 	// Load the plugins
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -75,17 +93,16 @@ module.exports = function (grunt) {
 
 	grunt.registerTask(
 		'build',
-		'Builds the project',
-		['uglify:js', 'concat:js', 'cssmin:minify', 'concat:css', 'jade:compile']
-	);
-	grunt.registerTask(
-		'minify',
-		'Creates minified files (no HTML)',
+		'Prepares project deployment (minification, concatenation)',
 		['uglify:js', 'concat:js', 'cssmin:minify', 'concat:css']
 	);
-
+	grunt.registerTask(
+		'release',
+		'Deploys the project (copy assets and generate HTML)',
+		['uglify:js', 'concat:js', 'cssmin:minify', 'concat:css', 'jade:compile', 'copy:assets']
+	);
 
 	// Default task(s).
-	grunt.registerTask('default', ['build']);
+	grunt.registerTask('default', ['release']);
 
 };

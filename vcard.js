@@ -28,13 +28,13 @@ if (!/[0-9]+/.test(nconf.get('port'))) {
 var isDev = 'development' === nconf.get('env').toLowerCase();
 var app = express();
 app.locals.basedir = path.join(__dirname, '/views');
-app.use(serveFavicon(__dirname + '/public/favicon.ico'));
+app.use(serveFavicon(__dirname + '/static/favicon.ico'));
 if (isDev) {
-	app.use(serveStatic(path.join(__dirname, '/public')));
+	app.use(serveStatic(path.join(__dirname, '/static')));
 	app.use(errorhandler({ dumpExceptions: true, showStack: true }));
 } else {
 	app.use(compression());
-	app.use(serveStatic(path.join(__dirname, '/public'), { maxAge: 86400 }));
+	app.use(serveStatic(path.join(__dirname, '/static'), { maxAge: 86400 }));
 	app.use(errorhandler());
 }
 app.set('port', nconf.get('port'));

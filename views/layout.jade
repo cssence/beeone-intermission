@@ -13,7 +13,7 @@ html(lang="en")
 				link(rel="stylesheet", href="/style.css")
 			else
 				style
-					include ../public/main.min.css
+					include ../build/main.min.css
 		block icons
 			link(rel="icon", type="image/png", sizes="256x256", href="avatar.png")
 			if verbose
@@ -33,7 +33,7 @@ html(lang="en")
 						if verbose
 							img.logo(src="logo.svg", alt="BeeOne")
 						else
-							include ../public/logo.svg
+							include ../static/logo.svg
 				h2.regular.tagline.note
 					| The digital innovation unit of Erste&nbsp;Hub
 				div.fn.org
@@ -67,11 +67,11 @@ html(lang="en")
 						if verbose
 							img(src="logo_erstegroup.svg" alt="")
 						else
-							include ../public/logo_erstegroup.svg
+							include ../static/logo_erstegroup.svg
 		block javascripts
 			if verbose
 				script(src="mailto.js")
 			else
 				script
-					include ../public/main.min.js
+					include ../build/main.min.js
 

@@ -1,10 +1,3 @@
-/public/*.min.*
-/public/*.html
 /node_modules/
 npm-debug.log
-._*
-.DS_Store*
-.Spotlight-*
-.Trashes
-ehthumbs.db
-Thumbs.db
+/build/
