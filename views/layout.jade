@@ -61,17 +61,11 @@ html(lang="en")
 			footer(role="contentinfo")
 				hr.print
 				small
-					| Member of Erste&nbsp;Group
-					br
-					a.parent(href="http://www.erstegroup.com/")
-						if verbose
-							img(src="logo_erstegroup.svg" alt="")
-						else
-							include ../static/logo_erstegroup.svg
+					| Member of 
+					a.parent(href="http://www.erstegroup.com/") Erste&nbsp;Group
 		block javascripts
 			if verbose
 				script(src="mailto.js")
 			else
 				script
 					include ../build/main.min.js
-
