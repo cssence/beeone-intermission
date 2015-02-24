@@ -1,22 +1,23 @@
 /*global grunt, module: false */
 
 module.exports = function (grunt) {
-	'use strict';
+	"use strict";
 
 	// Project configuration.
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON("package.json"),
+		config: grunt.file.readJSON("settings.json"),
 
 		// clean staging directory
 		clean: {
-			build: ['<%= pkg.paths.stage %>']
+			build: ["<%= config.paths.stage %>"]
 		},
 
 		// minify css
 		cssmin: {
 			main: {
 				files: {
-					'<%= pkg.paths.stage %>/main.min.css': ['static/normalize.css', 'static/style.css']
+					"<%= config.paths.stage %>/main.min.css": ["static/style.css"]
 				}
 			}
 		},
@@ -25,7 +26,7 @@ module.exports = function (grunt) {
 		uglify: {
 			main: {
 				files: {
-					'<%= pkg.paths.stage %>/main.min.js': 'static/mailto.js'
+					"<%= config.paths.stage %>/main.min.js": "static/mailto.js"
 				}
 			}
 		},
@@ -33,14 +34,9 @@ module.exports = function (grunt) {
 		// jade compile
 		jade: {
 			compile: {
-				options: {
-					data: {
-						debug: false
-					}
-				},
 				files: {
-					'<%= pkg.paths.dist %>/index.html': ['views/index.jade'],
-					'<%= pkg.paths.dist %>/404.html': ['views/404.jade']
+					"<%= config.paths.dist %>/index.html": ["views/index.jade"],
+					"<%= config.paths.dist %>/404.html": ["views/error.jade"]
 				}
 			}
 		},
@@ -49,13 +45,10 @@ module.exports = function (grunt) {
 		copy: {
 			assets: {
 				files: [
-					{expand: true, flatten: true, src: ['static/favicon.ico'], dest: '<%= pkg.paths.dist %>/'},
-					{expand: true, flatten: true, src: ['static/bg.jpg'], dest: '<%= pkg.paths.dist %>/'},
-					{expand: true, flatten: true, src: ['static/avatar*.png'], dest: '<%= pkg.paths.dist %>/'},
-					{expand: true, flatten: true, src: ['static/crossdomain.xml'], dest: '<%= pkg.paths.dist %>/'},
-					{expand: true, flatten: true, src: ['static/browserconfig.xml'], dest: '<%= pkg.paths.dist %>/'},
-					{expand: true, flatten: true, src: ['static/robots.txt'], dest: '<%= pkg.paths.dist %>/'},
-					{src: ['LICENSE'], dest: '<%= pkg.paths.dist %>/'}
+					{expand: true, flatten: true, src: ["static/bg.jpg"], dest: "<%= config.paths.dist %>/"},
+					{expand: true, flatten: true, src: ["static/avatar*.png"], dest: "<%= config.paths.dist %>/"},
+					{expand: true, flatten: true, src: ["static/browserconfig.xml"], dest: "<%= config.paths.dist %>/"},
+					{src: ["LICENSE"], dest: "<%= config.paths.dist %>/"}
 				]
 			}
 		}
@@ -63,24 +56,24 @@ module.exports = function (grunt) {
 	});
 
 	// Load the plugins
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jade');
-	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-contrib-jade");
+	grunt.loadNpmTasks("grunt-contrib-copy");
 
 	grunt.registerTask(
-		'build',
-		'Prepares project deployment (minification, concatenation)',
-		['clean:build', 'uglify:main', 'cssmin:main']
+		"build",
+		"Prepares project deployment (minification, concatenation)",
+		["clean:build", "uglify:main", "cssmin:main"]
 	);
 	grunt.registerTask(
-		'release',
-		'Deploys the project (copy assets and generate HTML)',
-		['clean:build', 'uglify:main', 'cssmin:main', 'jade:compile', 'copy:assets']
+		"release",
+		"Deploys the project (copy assets and generate HTML)",
+		["clean:build", "uglify:main", "cssmin:main", "jade:compile", "copy:assets"]
 	);
 
 	// Default task(s).
-	grunt.registerTask('default', ['release']);
+	grunt.registerTask("default", ["release"]);
 
 };

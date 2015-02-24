@@ -1,0 +1,6 @@
+{
+  "paths": {
+    "stage": "build",
+    "dist": "public"
+  }
+}

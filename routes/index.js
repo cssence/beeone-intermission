@@ -1,17 +1,14 @@
-/*global require: false, module: false */
+/*global require, module */
 (function () {
-	'use strict';
-
-	var IndexController = {
-		indexAction: function (isDev, errorCode) {
+	"use strict";
+	module.exports = {
+		indexAction: function (template, options) {
 			return function (req, res) {
-				res.render(errorCode === undefined ? 'index' : errorCode, { 'verbose': isDev });
+				res.render(typeof template === "string" ? template : "error", options);
 			};
 		},
 		pageNotFoundAction: function (req, res) {
-			res.redirect('/error');
+			res.redirect("/error");
 		}
 	};
-
-	module.exports = IndexController;
 }());
