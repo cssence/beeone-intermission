@@ -1,6 +1,10 @@
 {
   "name": "vCard",
   "version": "4.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeeOneGmbH/vcard.git"
+  },
   "scripts": {
     "start": "node vcard.js"
   },
