@@ -47,7 +47,8 @@ module.exports = function (grunt) {
 				files: [
 					{expand: true, flatten: true, src: ["static/bg.jpg"], dest: "<%= config.paths.dist %>/"},
 					{expand: true, flatten: true, src: ["static/avatar*.png"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/browserconfig.xml"], dest: "<%= config.paths.dist %>/"},
+					{expand: true, flatten: true, src: ["static/logo.png"], dest: "<%= config.paths.dist %>/"},
+					{expand: true, flatten: true, src: ["static/map.png"], dest: "<%= config.paths.dist %>/"},
 					{src: ["LICENSE"], dest: "<%= config.paths.dist %>/"}
 				]
 			}
