@@ -18,21 +18,17 @@ html(lang="en")
 			link(rel="icon", type="image/png", sizes="256x256", href="avatar.png")
 
 	body
-		header.print(role="banner")
-			img.photo(src="logo.png", alt="Corporate Logo of BeeOne GmbH")
 		main(role="main")
 			block errors
 			input.flip.screen(id="flip", type="checkbox")
 			label.flip.screen(for="flip")= " Show map"
 			.panel
 				section.c.vcard
-					h1.title.fn.n.org(href="//www.beeone.at/") BeeOne 
+					h1.fn.n.org(href="//www.beeone.at/")
+						a.url(href="//www.beeone.at/")
+							img.logo(src="logo.png", alt="Corporate Logo of BeeOne GmbH")
+						= " BeeOne "
 						abbr(lang="de", title="Gesellschaft mit beschränkter Haftung") GmbH
-					a.url.screen(href="//www.beeone.at/")
-						if verbose
-							img.logo(src="logo.svg", alt="")
-						else
-							include ../static/logo.svg
 					p.tagline
 						em.note The digital innovation unit of Erste&nbsp;Hub
 					p.adr
@@ -51,7 +47,7 @@ html(lang="en")
 							| beeone
 							abbr(title="dot") &#46;
 							| at
-					p.uid
+					p
 						small ATU 67474556
 				nav.c.screen(role="navigation")
 					a.about-us.rotate(href="http://www.erstegroup.com/en/About-us/Hub") About us

@@ -74,17 +74,17 @@ main {
 	}
 
 	html {
-		background: #bce4fa;
 		font: 300 16px/1.4 'Open Sans', sans-serif;
+	}
+
+	html,
+	figure {
+		background: #bce4fa;
 	}
 
 	a:hover {
 		color: #e30613;
 		text-decoration: underline;
-	}
-
-	abbr[title] {
-		font-size: inherit;
 	}
 
 	.panel {
@@ -99,12 +99,14 @@ main {
 	}
 
 	.url {
+		display: block;
 		position: absolute;
-	}
-
-	.logo {
 		height: 2em;
 		width: 9.75em;
+		background: url('data:image/svg+xml,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 391.7 80.5"><path d="m 354.5 43.3 c 0.8 -8.1 4.2 -11.8 10.7 -11.8 6.2 0 9 3.5 9.7 11.8 h -20.4 z m 37.2 10 c -0.1 -10.2 -1.3 -15 -4.7 -20.7 -4.3 -7.5 -13 -12.2 -22.6 -12.2 -16.5 0 -27.9 12.5 -27.9 30.6 0 17.7 11.4 29.5 28.4 29.5 13.5 0 21.9 -6.3 26.3 -20 l -15.5 -1.1 c -1.2 5.9 -4.7 9 -10.3 9 -6.7 0 -11.1 -4.9 -11.1 -12.4 0 -0.5 0 -1.6 0.1 -2.7 h 37.3 z m -66 25.9 v -37 c 0 -7 -0.9 -11.8 -2.8 -14.9 -2.8 -4.5 -8.2 -7 -14.5 -7 -8.3 0 -12.1 2.5 -17.1 10.9 v -9.7 h -15.8 v 57.7 h 17 V 46.8 c 0 -8.5 3.2 -13.2 8.9 -13.2 2.8 0 4.8 1.1 6 3 1.2 1.9 1.4 3.5 1.4 10.2 v 32.4 h 16.9 z M 231.3 14.9 c 9.5 0 14 8.4 14 25.4 0 17 -4.6 25.3 -13.9 25.3 -9.7 0 -14.5 -8.4 -14.5 -25.4 0 -7.3 1.3 -14.1 3.4 -18.5 2.2 -4.6 5.8 -6.8 11 -6.8 M 231.4 0 c -10.5 0 -19.1 4 -24.8 11.4 -5.6 7.3 -8.8 17.4 -8.8 28.6 0 11.4 3.2 21.5 9 29.3 5.6 7.5 13.8 11.2 24 11.2 10.5 0 19.4 -4.1 24.9 -11.4 5.4 -7.3 8.7 -18.1 8.7 -28.3 0 -11.2 -3.2 -21.5 -8.9 -29.4 C 249.9 3.7 241.9 0 231.4 0 m -78.6 43.3 c 0.8 -8.1 4.2 -11.8 10.7 -11.8 6.2 0 9 3.5 9.7 11.8 h -20.4 z m 37.1 10 c -0.1 -10.2 -1.3 -15 -4.7 -20.7 -4.3 -7.5 -13 -12.2 -22.6 -12.2 -16.5 0 -27.9 12.5 -27.9 30.6 0 17.7 11.4 29.5 28.5 29.5 13.5 0 21.9 -6.3 26.3 -20 L 174 59.4 c -1.2 5.9 -4.7 9 -10.3 9 -6.7 0 -11.1 -4.9 -11.1 -12.4 0 -0.5 0 -1.6 0.1 -2.7 h 37.2 z m -99.7 -10 c 0.8 -8.1 4.2 -11.8 10.7 -11.8 6.2 0 9 3.5 9.7 11.8 H 90.2 z m 37.1 10 C 127.2 43.1 126 38.3 122.6 32.6 118.3 25.1 109.6 20.4 100 20.4 83.5 20.4 72.1 32.9 72.1 51 c 0 17.7 11.4 29.5 28.4 29.5 13.5 0 21.9 -6.3 26.3 -20 l -15.5 -1.1 c -1.2 5.9 -4.7 9 -10.3 9 -6.7 0 -11.1 -4.9 -11.1 -12.4 0 -0.5 0 -1.6 0.1 -2.7 h 37.3 z M 18.3 46 h 14.9 c 7.8 0 12.3 3.4 12.3 9.2 0 3.2 -1.6 6.3 -4.1 8 -2 1.2 -4.2 1.6 -9 1.6 h -14 V 46 z m 0 -31 h 12.5 c 6.8 0 8.2 0.2 10.2 2.1 1.8 1.4 2.7 3.7 2.7 6.2 0 2.8 -1.3 5.5 -3.4 7 -1.8 1.3 -3.7 1.8 -8.2 1.8 H 18.3 V 15 z M 0 1.2 v 78 h 36.4 c 9.7 0 16 -1.8 21 -5.9 4.5 -3.9 7.1 -9.6 7.1 -15.6 0 -5.5 -2.3 -10.8 -6.3 -14.4 -2.7 -2.5 -5 -3.5 -10 -4.8 C 57.8 35.6 62.4 30 62.4 21.2 62.4 15.1 59.9 9.8 55.1 6.1 50.5 2.4 45.6 1.1 36.4 1.1 H 0 z" style="fill:rgb(0,85,147)"/></svg>') center / contain no-repeat;
+	}
+	.logo {
+		opacity: 0;
 	}
 
 	.tagline {
@@ -131,7 +133,7 @@ main {
 		line-height: 1.125;
 		text-align: center;
 		text-decoration: none !important;
-		text-shadow: -1px 0 #fff, 1px 0 #fff, 0 -1px .5em rgba(0,0,0,0.5);
+		text-shadow: 0 0 1px #35aa23, 0 0 2px #a6e22e;
 		transform: rotate(15deg);
 	}
 
@@ -274,7 +276,7 @@ main {
 	.flip {
 		position: absolute;
 		top: -2em;
-		right: -1em;
+		right: -1.5em;
 		height: 1.5em;
 		width: 1.5em;
 	}
@@ -282,13 +284,12 @@ main {
 		color: transparent !important;
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><path d="M35.6 44.2C68.8-16.8 12 14 12 14L9.5 4.3 2 23l19.3 4-6-7s10.6-8.3 21.5-3.2c8.5 4-1.2 27.4-1.2 27.4z" fill="white"/></svg>') center / contain no-repeat;
 		opacity: .5;
-		transform: rotateX(15deg);
 	}
 	input.flip {
 		opacity: 0;
 	}
 	input.flip:checked + .flip {
-		transform: rotateX(135deg) rotateY(-135deg);
+		transform: rotate(180deg) rotateY(180deg);
 	}
 
 	.panel + .panel {
@@ -343,7 +344,7 @@ main {
 		min-height: 100%;
 		font-family: serif;
 	}
-	.photo {
+	.logo {
 		float: right;
 	}
 	#map {
