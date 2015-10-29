@@ -21,7 +21,8 @@ html(lang="en")
 		main(role="main")
 			block errors
 			input.flip.screen(id="flip", type="checkbox")
-			label.flip.screen(for="flip")= " Show map"
+			label.flip.screen(for="flip")
+				a(href="#map")= " Show map"
 			.panel
 				section.c.vcard
 					h1.fn.n.org(href="//www.beeone.at/")
@@ -50,7 +51,7 @@ html(lang="en")
 					p
 						small ATU 67474556
 				nav.c.screen(role="navigation")
-					a.about-us.rotate(href="http://www.erstegroup.com/en/About-us/Hub") About us
+					a.about-us(href="http://www.erstegroup.com/en/About-us/Hub") About us
 				footer(role="contentinfo")
 					p.c
 						small
