@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0">
+        <title>Erste Hub/BeeOne Event on Dec 1st, 2015</title>
+        <script src="../event2015/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="../event2015/style.css">
+        <style>body{background-image:url("face.gif");background-position:top center}</style>
+    </head>
+    <body>
+        <div id="content">
+
+            <h1 id="playBtn">CLICK TO PLAY</h1>
+
+            <div id="textArea">
+                <h1>FEEL THE BEAT OF TOMORROW!</h1>
+                <h2>Don’t forget to celebrate 3&nbsp;years of Erste&nbsp;Hub!</h2>
+                <div id="button"><input type="button" onclick="playAudio()" value="Play audio!"/></div>
+
+                <p>
+                    When:   1st December 2015,<br />
+                    Time:   6 pm<br />
+                    Where: Hub Office, Neutorgasse 4-8, 1010 Vienna
+                </p>
+            </div>
+
+        </div>
+
+        <script>
+
+            $('#playBtn').click(function(){
+
+               $(this).hide();
+               $('#textArea').show();
+
+               playAudio();
+            });
+
+            function playAudio() {
+                var audio = new Audio('../event2015/BEATBOX.mp3');
+                audio.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+                audio.play();
+            }
+        </script>
+
+    </body>
+</html>
