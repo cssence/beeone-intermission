@@ -8,12 +8,12 @@ body {
 
 #content {
     padding: 2em;
-   
+
     text-align: center;
     background-color: rgba(255,255,255,0.85);
-    
+
     margin:0 auto;
-	width:300px;
+	width:18.75em;
 }
 
 #playBtn{
@@ -40,4 +40,8 @@ h2 {
 }
 p {
     font-family: sans-serif;
+}
+
+@media (max-width:22em) {
+  html { font-size: 75%; }
 }
