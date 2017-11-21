@@ -23,7 +23,7 @@ html(lang="en")
 					= " BeeOne "
 					abbr(lang="de", title="Gesellschaft mit beschränkter Haftung") GmbH
 				p.tagline
-					em.note The digital innovation unit of Erste&nbsp;Hub
+					strong.note The digital innovation unit of Erste&nbsp;Hub
 			section#contact
 				h2.sr-only Company details
 				p.adr
@@ -54,14 +54,14 @@ html(lang="en")
 					a(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien", title="Show in Google Maps", data-credit="Image courtesy of www.erstecampus.at")
 						img(src="/map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
 					br.print
-					small The company is located at the Erste Campus.
+					small.screen The company is located at the Erste Campus.
 		aside#about.screen
 			h2.sr-only About
 			p
 				a.about-us(href="http://www.erstegroup.com/en/About-us/Hub") Learn more about BeeOne and the Erste Hub.
-			iframe(src="https://www.erstegroup.com/en/About-us/Hub", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
+			iframe(src="https://www.erstegroup.com/en/About-us/Hub", tabindex="-1", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
 
-		footer.print(role="contentinfo")
+		footer.hidden(role="contentinfo")
 			hr
 			p &copy; 2012-2017 BeeOne GmbH.
 			block javascripts

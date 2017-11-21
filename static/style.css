@@ -21,7 +21,6 @@ iframe {
 	border: none;
 }
 
-footer,
 small {
 	font-size: 75%;
 }
@@ -29,10 +28,6 @@ small {
 abbr[title] {
 	border-bottom: none;
 	text-decoration: none;
-}
-
-.tagline {
-	color: #005593;
 }
 
 /* Screen */
@@ -46,10 +41,6 @@ abbr[title] {
 html {
 	box-sizing: border-box;
 	color: #000;
-}
-
-main {
-	display: block; /*IE*/
 }
 
 @keyframes locate {
@@ -89,6 +80,7 @@ main {
 		font-weight: inherit;
 	}
 
+	.hidden,
 	.print {
 		display: none !important;
 	}
@@ -120,13 +112,10 @@ main {
 		border-top: .25em solid #bce4fa;
 	}
 
-	.url,
-	.tagline {
-		position: absolute;
-		top: 0;
-	}
 	.url {
 		display: block;
+		position: absolute;
+		top: 0;
 		left: 0;
 		height: 2.25em;
 		width: 9.75em;
@@ -136,9 +125,18 @@ main {
 		opacity: 0;
 	}
 
+	.tagline {
+		position: absolute;
+		top: .3125em;
+	}
+
+	.tagline,
+	.related {
+		color: #005593;
+	}
+
 	.related {
 		line-height: 1;
-		color: rgba(0,0,0,.6);
 	}
 
 	.parent {
@@ -157,7 +155,7 @@ main {
 	}
 	h1 {
 		position: relative;
-		padding-top: 6em;
+		padding-top: 7em;
 	}
 
 	.tagline {
@@ -166,7 +164,7 @@ main {
 	.note {
 		position: absolute;
 		left: 0;
-		top: -5em;
+		top: -6em;
 	}
 
 	.related {
@@ -199,7 +197,7 @@ main {
 	header,
 	#contact,
 	#map p {
-		padding: 0 calc(50% - 10em);
+		padding: 0 calc(50% - 9em);
 	}
 
 	#about {
@@ -291,8 +289,11 @@ main {
 
 }
 
-/* IE10+ */
+/* IE */
 
+main {
+	display: block;
+}
 @media screen and (-ms-high-contrast: none), screen and (-ms-high-contrast: active) {
 	.url {
 		background: none;
@@ -310,37 +311,26 @@ main {
 /* Print */
 
 @page {
-	margin: 20mm;
+	margin: 25mm;
 }
 @media print {
-	hr,
+	.hidden,
 	.sr-only,
 	.screen {
 		display: none !important;
 	}
-	html,
-	body {
-		min-height: 100%;
-		font-family: serif;
+	html {
+		font-family: sans-serif;
 	}
 	.logo {
 		float: right;
-	}
-	#map {
-		margin-top: 30mm;
-	}
-	footer {
-		position: absolute;
-		bottom: 0;
-		left: 0;
 	}
 }
 @media print and (orientation: landscape) {
 	#map {
 		position: absolute;
-		right: 0;
 		bottom: 0;
-		width: 120mm;
-		text-align: right;
+		right: 0;
+		width: 75%;
 	}
 }
