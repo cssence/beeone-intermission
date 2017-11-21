@@ -9,7 +9,6 @@ html(lang="en")
 		block stylesheets
 			link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300")
 			link(rel="stylesheet", href="/style.css?inline")
-			link(rel="stylesheet", href="/style-ie.css?inline", media="(-ms-high-contrast: none), (-ms-high-contrast: active)")
 		block icons
 			link(rel="icon", type="image/png", sizes="16x16", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUASI0AT40AVZMNVJMAWJYMYJkJbKQwdqlDiLZom8Ckv9ayytvJ3enf5/Dv9ff+//wGy32ZAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94KDw0WO1N4EKgAAABQSURBVAjXY1CCAgb9/2DwCZkhGhpaA2Ywhxc6Qxj7/xiehzB+MbwHM0KDoyFSYcmWUDV/HddDGP+M54MZFW2G+0EMRkFBiJozZ86i2AVzBgDJFElrN+qjowAAAABJRU5ErkJggg==")
 			link(rel="icon", type="image/png", sizes="256x256", href="avatar.png")
@@ -63,7 +62,7 @@ html(lang="en")
 				a.about-us(href="http://www.erstegroup.com/en/About-us/Hub") Learn more about BeeOne and the Erste Hub.
 			iframe(src="https://www.erstegroup.com/en/About-us/Hub", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
 
-		footer.print(role="contentinfo")
+		footer.hidden(role="contentinfo")
 			hr
 			p &copy; 2012-2017 BeeOne GmbH.
 			block javascripts

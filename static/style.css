@@ -85,6 +85,7 @@ main {
 		font-weight: inherit;
 	}
 
+	.hidden,
 	.print {
 		display: none !important;
 	}
@@ -147,7 +148,6 @@ main {
 
 	.vat-number,
 	.related {
-		margin-top: .75em;
 		line-height: 1;
 	}
 
@@ -288,14 +288,32 @@ main {
 
 }
 
+/* IE10+ */
+
+@media screen and (-ms-high-contrast: none), screen and (-ms-high-contrast: active) {
+	.url {
+		background: none;
+	}
+	.logo {
+		opacity: 1;
+	}
+}
+@media screen and (min-width: 40em) and (-ms-high-contrast: none), screen and (min-width: 40em) and (-ms-high-contrast: active) {
+	.vcard {
+		height: 15em;
+	}
+}
+
 /* Print */
 
+@page {
+	margin: 20mm;
+}
 @media print {
+	.hidden,
+	.sr-only,
 	.screen {
 		display: none !important;
-	}
-	@page {
-		margin: 25mm;
 	}
 	html,
 	body {
