@@ -18,7 +18,7 @@ html(lang="en")
 		main.vcard(role="main")
 			header
 				h1.fn.n.org(aria-label="BeeOne")
-					a.url(href="//www.beeone.at/")
+					a.url(href="https://www.beeone.at/", tabindex="-1")
 						img.logo(src="logo.png", alt="")
 					= " BeeOne "
 					abbr(lang="de", title="Gesellschaft mit beschränkter Haftung") GmbH
@@ -47,23 +47,26 @@ html(lang="en")
 				p.related
 					small
 						| Member of 
-						a.parent(href="http://www.erstegroup.com/") Erste&nbsp;Group
-			section#map
+						a.parent(href="https://www.erstegroup.com/") Erste&nbsp;Group
+			section#map.figure
 				h2.sr-only Location
-				p
-					a(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien", title="Show in Google Maps", data-credit="Image courtesy of www.erstecampus.at")
-						img(src="/map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
+				p.box(data-credit="Image courtesy of www.erstecampus.at")
+					span.lead-in.screen The company is located at the Erste Campus.
 					br.print
-					span.minor.screen The company is located at the Erste Campus.
-		aside#about.screen
+					img.preview(src="/map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
+					br.print
+					a.c2a.screen(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien") Show on Google&nbsp;Maps
+		aside#about.figure.screen
 			h2.sr-only About
-			p
-				a.about-us(href="http://www.erstegroup.com/en/About-us/Hub")
-					span.minor Learn more about BeeOne and the Erste Hub.
-			iframe(src="https://www.erstegroup.com/en/About-us/Hub", tabindex="-1", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
+			p.box
+				span.lead-in Learn more about BeeOne and the Erste Hub.
+				br.print
+				iframe.preview(src="https://www.erstegroup.com/en/About-us/Hub", tabindex="-1", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
+				br.print
+				a.c2a.screen(href="http://www.erstegroup.com/en/About-us/Hub") Open related article on the Erste&nbsp;Group website
 
 		footer.hidden(role="contentinfo")
 			hr
 			p &copy; 2012-2017 BeeOne GmbH.
 			block javascripts
-				script(src="mailto.js?inline")
+				script(src="/mailto.js?inline")
