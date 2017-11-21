@@ -21,7 +21,7 @@ iframe {
 	border: none;
 }
 
-figcaption p,
+footer,
 small {
 	font-size: 75%;
 }
@@ -50,6 +50,11 @@ html {
 
 main {
 	display: block; /*IE*/
+}
+
+@keyframes locate {
+	0% { transform: translate(4.5em, -2em); }
+	100% { transform: translate(0, 0); }
 }
 
 @keyframes fade-out {
@@ -84,7 +89,6 @@ main {
 		font-weight: inherit;
 	}
 
-	.hidden,
 	.print {
 		display: none !important;
 	}
@@ -101,32 +105,19 @@ main {
 	}
 
 	html {
+		background-color: #fff;
 		font: 300 16px/1.4 'Open Sans', sans-serif;
-	}
-
-	html,
-	figure {
-		background: #bce4fa;
 	}
 
 	a:focus,
 	a:hover {
-		color: #005593;
 		box-shadow: inset 0 -.25em 0 0 rgba(227,6,19,.4);
 	}
 
-	main {
-		max-width: 36em;
-		margin: 0 auto;
-		padding: 1em;
+	.vcard {
+		padding: 2em;
 		background-color: #fff;
 		border-top: .25em solid #bce4fa;
-	}
-
-	figure {
-		margin-left: -1em;
-		margin-right: -1em;
-		padding: 1em;
 	}
 
 	.url,
@@ -157,14 +148,6 @@ main {
 		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAAA8CAMAAACOytI+AAADAFBMVEVMaXEASHrfAADhAA4AQnMARXgASHoASHoASHgARXncABLiBRLhBRLgAw/hBRLhBBEARnrgBBEAR3kAQnsAAADhBBAASHoARnkASHriBRIASHoAO3YASHoARHYAAFUANmAARngASHkASHoAQXAAM2YAR3cAR3gASXsASHoAH1wASXsARXkAQngARngARHUAR3kAQHsARHYAQnQAQXUAM3cASHoAR3oARHYAR3oARncAR3gAAAAAN3AAPX0ARngAPXQASHoASHoASHkASHrbAADhAxDiBRIARnfdAAAARXgARnkASXoASHkARngARngARXYARXkARnkARXcAQXYASHoAQ3cAR3oASHoASHsASXoASHoAR3oASHoASHoASHoAR3oASXoASHkARnkASHsAR3gARngAR3oARnoARnkARnTbAAAARnkARnkASHgAR3sAQ3jiBRIAR3oASHgAR3oAR3kARXcARnoASHoASHoARnkASXsARnkARnoAPHgASHkAR3gARngASXoASHoASHoASXoAR3kASXoARXYASHoASHoAPHIAR3rgBRAASXoASHkARXUARnniAAzhBBEASHnjBBAAQXbjBRIARHngAA8ARHfiBA/hBREAR3niBRLhBRLjBRLhAxAAR3kARXkASXoARHcARngASHoAR3kASHkAR3gASHoARnoASHoAR3oAR3kASHkAR3kASXsAR3oAR3fhAw/jABHeABEAPnHiBBLhBBHiBRLiBRIARXrgAxDiBRIAR3vfAhHeAAiqAADhBhLiBBLiBBHiBhPiBRHlAw8ARnTjBBLgBBLeAA3iBRLgBBIARHoAQ3rgAxDRAADjBhEASXrcAAniBRPlAADiAxLgAxHhBRLgBBPfBRDgBBDiAhHcAA7kAxHhBRLcAADiBBHUAA4AR3ngBA/iBRHiBBLjBhLjBhIASXriBhPgBREASHoAQnUAR3gARnjhBRIAR3kASHoASXkARGkAQnEARXgAR3gAR3oASHkASHcARXcASXvjBhNRGSSkAAAA/nRSTlMA+AgRHzf+dW47Hf77Y/k7n3W5HwKA6mPg87cN7R0DCCOS+wsFNjzc7gTWOSJBMHIQKBkgD/DCOHZcbAESB1cVwPaJ+QV0+XAOVWu2hkgu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') 0 90% / 6em auto no-repeat;
 	}
 
-	#map {
-		position: relative;
-	}
-
-	#map img {
-		width: 100%;
-	}
-
 }
 
 @media only screen and (max-width: 39.9375em) {
@@ -191,23 +174,36 @@ main {
 	}
 
 	#map {
-		margin: 2em 0 -1em;
+		margin: 2em -2em 0;
+		padding: 1em 2em;
+		background-color: #bce4fa;
+	}
+	#map a {
+		display: block;
+		position: relative;
+	}
+	#map img {
+		width: 100%;
+	}
+	[data-credit]::before {
+		content: attr(data-credit);
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: .125em .25em;
+		color: rgba(255,255,255,.75);
+		font-size: .375rem;
+		text-transform: uppercase;
+	}
+
+	header,
+	#contact,
+	#map p {
+		padding: 0 calc(50% - 10em);
 	}
 
 	#about {
 		display: none;
-	}
-
-	[data-credit]::before {
-		content: attr(data-credit);
-		position: absolute;
-		left: 0;
-		bottom: 5em;
-		transform-origin: 0 0;
-		transform: rotate(-90deg);
-		color: rgba(255,255,255,.75);
-		font-size: .375rem;
-		text-transform: uppercase;
 	}
 
 }
@@ -219,11 +215,10 @@ main {
 		height: 100vh;
 	}
 
-	main {
+	.vcard {
 		z-index: 1;
 		width: 36em;
 		margin: auto;
-		padding: 2em;
 		box-shadow: 0 .2em 1em rgba(0,0,0,.7);
 	}
 
@@ -238,27 +233,35 @@ main {
 
 	.related {
 		position: absolute;
-		width: 6em;
 		left: 0;
 		bottom: 0;
+		width: 6em;
 	}
 
-	#map figure {
+	#map {
+		position: relative;
+	}
+	#map a {
 		overflow: hidden;
 		position: absolute;
-		right: 1em;
 		bottom: 0;
+		right: 0;
 		height: 7em;
 		width: 7em;
 		border: .25em solid #bce4fa;
 		border-radius: 50%;
 	}
+	#map small {
+		display: none;
+	}
 	#map img {
 		position: absolute;
+		z-index: -1;
 		right: -7em;
 		bottom: -2em;
 		max-width: none;
 		width: 300%;
+		animation: 1.2s cubic-bezier(.14,.54,.07,1.21) locate forwards;
 	}
 
 	#about iframe,
@@ -310,7 +313,7 @@ main {
 	margin: 20mm;
 }
 @media print {
-	.hidden,
+	hr,
 	.sr-only,
 	.screen {
 		display: none !important;
@@ -324,10 +327,20 @@ main {
 		float: right;
 	}
 	#map {
-		margin: 0;
+		margin-top: 30mm;
+	}
+	footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+@media print and (orientation: landscape) {
+	#map {
 		position: absolute;
 		right: 0;
 		bottom: 0;
 		width: 120mm;
+		text-align: right;
 	}
 }

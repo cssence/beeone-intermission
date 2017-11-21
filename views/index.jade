@@ -50,18 +50,18 @@ html(lang="en")
 						a.parent(href="http://www.erstegroup.com/") Erste&nbsp;Group
 			section#map
 				h2.sr-only Location
-				figure
+				p
 					a(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien", title="Show in Google Maps", data-credit="Image courtesy of www.erstecampus.at")
 						img(src="/map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
-					figcaption
-						p The company is located at the Erste Campus.
+					br.print
+					small The company is located at the Erste Campus.
 		aside#about.screen
 			h2.sr-only About
 			p
 				a.about-us(href="http://www.erstegroup.com/en/About-us/Hub") Learn more about BeeOne and the Erste Hub.
 			iframe(src="https://www.erstegroup.com/en/About-us/Hub", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
 
-		footer.hidden(role="contentinfo")
+		footer.print(role="contentinfo")
 			hr
 			p &copy; 2012-2017 BeeOne GmbH.
 			block javascripts
