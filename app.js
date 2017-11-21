@@ -5,8 +5,7 @@
 (function (console, require, process, dirname) {
 	"use strict";
 
-	var	nconf, express, http, path, serveStatic,
-		options, app, mainController;
+	var	nconf, express, http, path, serveStatic, app, mainController;
 
 	// Module dependencies (environment)
 	nconf = require("nconf");
@@ -34,12 +33,9 @@
 	app.set("view engine", "jade");
 
 	// Routes
-	options = {
-		verbose: "development" === nconf.get("env").toLowerCase()
-	};
 	mainController = require("./routes/index");
-	app.get("/", mainController.indexAction("index", options));
-	app.get("/error", mainController.indexAction(404, options));
+	app.get("/", mainController.indexAction("index"));
+	app.get("/error", mainController.indexAction(404));
 	app.use(mainController.pageNotFoundAction);
 
 	// Http server

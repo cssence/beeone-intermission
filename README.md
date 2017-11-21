@@ -20,4 +20,4 @@ https://developers.google.com/structured-data/testing-tool?url=http%253A%252F%25
 
 ## ©
 
-Copyright 2012-2015 [BeeOne GmbH](http://www.beeone.at/).
+Copyright 2012-2017 [BeeOne GmbH](https://www.beeone.at/).

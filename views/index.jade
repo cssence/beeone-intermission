@@ -3,69 +3,68 @@ html(lang="en")
 
 	head
 		meta(charset="utf-8")
-		title BeeOne ☆ Research &amp; Innovation for Erste Group
+		title BeeOne ✨ Innovation &amp; Design for Erste Group
 		meta(name="description", content="BeeOne GmbH is the digital innovation unit of Erste Hub.")
 		meta(name="viewport", content="width=device-width,initial-scale=1.0")
 		block stylesheets
 			link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300")
-			if verbose
-				link(rel="stylesheet", href="/style.css")
-			else
-				style
-					include ../build/main.min.css
+			link(rel="stylesheet", href="/style.css?inline")
+			link(rel="stylesheet", href="/style-ie.css?inline", media="(-ms-high-contrast: none), (-ms-high-contrast: active)")
 		block icons
 			link(rel="icon", type="image/png", sizes="16x16", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUASI0AT40AVZMNVJMAWJYMYJkJbKQwdqlDiLZom8Ckv9ayytvJ3enf5/Dv9ff+//wGy32ZAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94KDw0WO1N4EKgAAABQSURBVAjXY1CCAgb9/2DwCZkhGhpaA2Ywhxc6Qxj7/xiehzB+MbwHM0KDoyFSYcmWUDV/HddDGP+M54MZFW2G+0EMRkFBiJozZ86i2AVzBgDJFElrN+qjowAAAABJRU5ErkJggg==")
 			link(rel="icon", type="image/png", sizes="256x256", href="avatar.png")
 
 	body
-		main(role="main")
-			block errors
-			input.flip.screen(id="flip", type="checkbox")
-			label.flip.screen(for="flip")
-				a(href="#map")= " Show map"
-			.panel
-				section.c.vcard
-					h1.fn.n.org(href="//www.beeone.at/")
-						a.url(href="//www.beeone.at/")
-							img.logo(src="logo.png", alt="Corporate Logo of BeeOne GmbH")
-						= " BeeOne "
-						abbr(lang="de", title="Gesellschaft mit beschränkter Haftung") GmbH
-					p.tagline
-						em.note The digital innovation unit of Erste&nbsp;Hub
-					p.adr
-						a(href="https://www.google.com/maps/place/Neutorgasse+4,+1010+Wien", title="Show in Google Maps")
-							span.street-address(lang="de") Neutorgasse&nbsp;4-8
-							br
-							span.postal-code 1010
-							| &nbsp;
-							span.locality Vienna
-							br.print
-							span.country-name.print Austria
-					p
-						span.email
-							| office
-							abbr(title="at") &#64;
-							| beeone
-							abbr(title="dot") &#46;
-							| at
-					p
-						small ATU 67474556
-				nav.c.screen(role="navigation")
-					a.about-us(href="http://www.erstegroup.com/en/About-us/Hub") About us
-				footer(role="contentinfo")
-					p.c
-						small
-							| Member of 
-							a.parent(href="http://www.erstegroup.com/") Erste&nbsp;Group
-			.panel
-				figure#map
-					a(href="https://www.google.com/maps/place/Neutorgasse+4,+1010+Wien", title="Show in Google Maps")
-						img.map(src="/map.png", alt="Map highlighting the company’s location in the heart of Vienna; courtesy of Google.")
-					figcaption.c
-						p The company is located in the first district of Vienna, close to metro station “Schottenring”.
-		block javascripts
-			if verbose
-				script(src="mailto.js")
-			else
-				script
-					include ../build/main.min.js
+		block errors
+		main.vcard(role="main")
+			header
+				h1.fn.n.org(aria-label="BeeOne")
+					a.url(href="//www.beeone.at/")
+						img.logo(src="logo.png", alt="")
+					= " BeeOne "
+					abbr(lang="de", title="Gesellschaft mit beschränkter Haftung") GmbH
+				p.tagline
+					em.note The digital innovation unit of Erste&nbsp;Hub
+			section#contact
+				h2.sr-only Company details
+				p.adr
+					a(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien")
+						span.street-address(lang="de") Am&nbsp;Belvedere&nbsp;1
+						br
+						span.postal-code 1100
+						| &nbsp;
+						span.locality Vienna
+						br.print
+						span.country-name.print Austria
+				p.contact
+					span.email
+						| office
+						abbr(title="at") &#64;
+						| beeone
+						abbr(title="dot") &#46;
+						| at
+				p.vat-number
+					small ATU 67474556
+				p.related
+					small
+						| Member of 
+						a.parent(href="http://www.erstegroup.com/") Erste&nbsp;Group
+			section#map
+				h2.sr-only Location
+				figure
+					a(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien", title="Show in Google Maps")
+						img(src="/map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
+					figcaption
+						p The company is located at the Erste Campus. 
+							small.credit Map image courtesy of www.erstecampus.at
+		aside#about.screen
+			h2.sr-only About
+			p
+				a.about-us(href="http://www.erstegroup.com/en/About-us/Hub") Learn more about BeeOne and the Erste Hub.
+			iframe(src="https://www.erstegroup.com/en/About-us/Hub", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
+
+		footer.print(role="contentinfo")
+			hr
+			p &copy; 2012-2017 BeeOne GmbH.
+			block javascripts
+				script(src="mailto.js?inline")
