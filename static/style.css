@@ -20,17 +20,10 @@ iframe {
 	border: none;
 }
 
-.lead-in,
-small {
-	font-size: 75%;
-}
-
 abbr[title] {
 	border-bottom: none;
 	text-decoration: none;
 }
-
-/* Screen */
 
 *,
 *:before,
@@ -43,6 +36,12 @@ html {
 	color: #000;
 }
 
+.email-tld {
+	speak: spell-out;
+}
+
+/* Screen */
+
 @keyframes locate {
 	0% { transform: translate(4.5em, -2em); }
 	100% { transform: translate(0, 0); }
@@ -54,23 +53,6 @@ html {
 }
 
 @media only screen {
-
-	[role="alert"] {
-		position: fixed;
-		z-index: 2;
-		top: 1em;
-		left: 50%;
-		width: 18em;
-		transform: translateX(-50%);
-		padding: 1em .5em .875em;
-		background-color: #313a45;
-		box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-		color: #fff;
-		font-size: 75%;
-		text-align: center;
-		text-transform: uppercase;
-		animation: 3s ease fade-out forwards;
-	}
 
 	* {
 		margin: 0;
@@ -96,6 +78,30 @@ html {
 		border: 0;
 	}
 
+	[role="alert"] {
+		position: fixed;
+		z-index: 2;
+		top: 1em;
+		left: 50%;
+		width: 18em;
+		transform: translateX(-50%);
+		padding: 1em 1em 1em 2.5em;
+		background-color: #ffe6e6;
+		border: 1px solid #ffbdbd;
+		border-radius: 0.25rem;
+		box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+		color: #b33c3c;
+		text-indent: -1.5em;
+		animation: 3s ease fade-out forwards;
+	}
+	[role="alert"]::before {
+		content: "\26a0";
+		display: inline-block;
+		width: 1.5em;
+		text-indent: 0;
+		font-family: sans-serif;
+	}
+
 	html {
 		background-color: #fff;
 		font: 300 16px/1.4 'Open Sans', sans-serif;
@@ -104,6 +110,12 @@ html {
 	a:focus,
 	a:hover {
 		box-shadow: inset 0 -.25em 0 0 rgba(227,6,19,.4);
+	}
+
+	.lead-in,
+	.vat-number,
+	.related {
+		font-size: 75%;
 	}
 
 	.vcard {
@@ -128,15 +140,16 @@ html {
 	.tagline {
 		position: absolute;
 		top: .3125em;
-	}
-
-	.tagline,
-	.related {
 		color: #005593;
 	}
 
+	.vat-number {
+		line-height: 1.6;
+	}
+
 	.related {
-		line-height: 1;
+		color: #00497b;
+		line-height: 1.2;
 	}
 
 	.parent {
@@ -211,7 +224,7 @@ html {
 		margin-right: auto;
 	}
 	.figure {
-		padding: 1.5em 0;
+		padding: 1.5em 0 1.75em;
 	}
 	.box {
 		overflow: hidden;
@@ -362,15 +375,32 @@ main {
 	html {
 		font-family: sans-serif;
 	}
+	body {
+		margin: 0;
+	}
 	.logo {
 		float: right;
 	}
 }
 @media print and (orientation: landscape) {
-	#map {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		width: 75%;
+	#map .box {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 10mm;
+	}
+	#map img,
+	#map .box::after {
+		display: block;
+		height: 62.4947032mm;
+		width: 115mm;
+	}
+	#map .box::after {
+		content: "space for your notes";
+		border: 1px dashed currentColor;
+		color: #005593;
+		font-size: 75%;
+		line-height: 2;
+		text-transform: uppercase;
+		text-align: center;
 	}
 }

@@ -18,7 +18,7 @@ html(lang="en")
 		main.vcard(role="main")
 			header
 				h1.fn.n.org(aria-label="BeeOne")
-					a.url(href="https://www.beeone.at/", tabindex="-1")
+					a.url(href="https://www.beeone.at/")
 						img.logo(src="logo.png", alt="")
 					= " BeeOne "
 					abbr(lang="de", title="Gesellschaft mit beschränkter Haftung") GmbH
@@ -41,9 +41,8 @@ html(lang="en")
 						abbr(title="at") &#64;
 						| beeone
 						abbr(title="dot") &#46;
-						| at
-				p.vat-number
-					small ATU 67474556
+						span.email-tld at
+				p.vat-number ATU 67474556
 				p.related
 					small
 						| Member of 
@@ -52,17 +51,17 @@ html(lang="en")
 				h2.sr-only Location
 				p.box(data-credit="Image courtesy of www.erstecampus.at")
 					span.lead-in.screen The company is located at the Erste Campus.
-					br.print
+					br.hidden
 					img.preview(src="/map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
-					br.print
+					br.hidden
 					a.c2a.screen(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien") Show on Google&nbsp;Maps
 		aside#about.figure.screen
 			h2.sr-only About
 			p.box
 				span.lead-in Learn more about BeeOne and the Erste Hub.
-				br.print
+				br.hidden
 				iframe.preview(src="https://www.erstegroup.com/en/About-us/Hub", tabindex="-1", aria-hidden="true", sandbox, referrerpolicy="no-referrer")
-				br.print
+				br.hidden
 				a.c2a.screen(href="http://www.erstegroup.com/en/About-us/Hub") Open related article on the Erste&nbsp;Group website
 
 		footer.hidden(role="contentinfo")
