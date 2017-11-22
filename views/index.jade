@@ -7,8 +7,13 @@ html(lang="en")
 		meta(name="description", content="BeeOne GmbH is the digital innovation unit of Erste Hub.")
 		meta(name="viewport", content="width=device-width,initial-scale=1.0")
 		block stylesheets
+			!= "<!--[if gt IE 9]><! -->"
 			link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300")
 			link(rel="stylesheet", href="/style.css?inline")
+			!= "<!-- <![endif]-->"
+			!= "<!--[if lte IE 9]>"
+			link(rel="stylesheet", href="/oldie.css")
+			!= "<![endif]-->"			
 		block icons
 			link(rel="icon", type="image/png", sizes="16x16", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUASI0AT40AVZMNVJMAWJYMYJkJbKQwdqlDiLZom8Ckv9ayytvJ3enf5/Dv9ff+//wGy32ZAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94KDw0WO1N4EKgAAABQSURBVAjXY1CCAgb9/2DwCZkhGhpaA2Ywhxc6Qxj7/xiehzB+MbwHM0KDoyFSYcmWUDV/HddDGP+M54MZFW2G+0EMRkFBiJozZ86i2AVzBgDJFElrN+qjowAAAABJRU5ErkJggg==")
 			link(rel="icon", type="image/png", sizes="256x256", href="avatar.png")
