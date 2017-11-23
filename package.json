@@ -6,7 +6,7 @@
     "url": "https://github.com/BeeOneGmbH/vcard.git"
   },
   "scripts": {
-    "start": "node vcard.js"
+    "start": "node app.js"
   },
   "devDependencies": {
     "express": "~4.9.8",

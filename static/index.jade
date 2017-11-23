@@ -9,14 +9,16 @@ html(lang="en")
 		block stylesheets
 			!= "<!--[if gt IE 9]><! -->"
 			link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300")
-			link(rel="stylesheet", href="/style.css?inline")
+			link(rel="stylesheet", href="style.css?inline")
 			!= "<!-- <![endif]-->"
 			!= "<!--[if lte IE 9]>"
-			link(rel="stylesheet", href="/oldie.css")
+			link(rel="stylesheet", href="oldie.css")
 			!= "<![endif]-->"			
 		block icons
-			link(rel="icon", type="image/png", sizes="16x16", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUASI0AT40AVZMNVJMAWJYMYJkJbKQwdqlDiLZom8Ckv9ayytvJ3enf5/Dv9ff+//wGy32ZAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94KDw0WO1N4EKgAAABQSURBVAjXY1CCAgb9/2DwCZkhGhpaA2Ywhxc6Qxj7/xiehzB+MbwHM0KDoyFSYcmWUDV/HddDGP+M54MZFW2G+0EMRkFBiJozZ86i2AVzBgDJFElrN+qjowAAAABJRU5ErkJggg==")
-			link(rel="icon", type="image/png", sizes="256x256", href="avatar.png")
+			link(rel="apple-touch-icon", sizes="300x300", href="avatar.png")
+			link(rel="icon", type="image/png", sizes="32x32", href="favicon-32.png")
+			link(rel="icon", type="image/png", sizes="16x16", href="favicon-16.png")
+			link(rel="icon", type="image/png", sizes="300x300", href="avatar.png")
 
 	body
 		block errors
@@ -31,6 +33,8 @@ html(lang="en")
 					strong.note The digital innovation unit of Erste&nbsp;Hub
 			section#contact
 				h2.sr-only Company details
+				p.hidden
+					img.photo(src="avatar.png", alt="")
 				p.adr
 					a(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien")
 						span.street-address(lang="de") Am&nbsp;Belvedere&nbsp;1
@@ -57,7 +61,7 @@ html(lang="en")
 				p.box(data-credit="Image courtesy of www.erstecampus.at")
 					span.lead-in.screen The company is located at the Erste Campus.
 					br.hidden
-					img.preview(src="/map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
+					img.preview(src="map.png", alt="A map highlighting the company’s location. It is close to train station “Vienna Central Station.”")
 					br.hidden
 					a.c2a.screen(href="https://www.google.com/maps/place/Am+Belvedere+1,+1100+Wien") Show on Google&nbsp;Maps
 		aside#about.figure.screen
@@ -73,4 +77,4 @@ html(lang="en")
 			hr
 			p &copy; 2012-2017 BeeOne GmbH.
 			block javascripts
-				script(src="/mailto.js?inline")
+				script(src="mailto.js?inline")

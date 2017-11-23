@@ -26,14 +26,14 @@
 
 	// Initialization
 	app = express();
-	app.locals.basedir = path.join(dirname, "/views");
+	app.locals.basedir = path.join(dirname, "/static");
 	app.use(serveStatic(path.join(dirname, "/static")));
 	app.set("port", nconf.get("port"));
-	app.set("views", path.join(dirname, "/views"));
+	app.set("views", path.join(dirname, "/static"));
 	app.set("view engine", "jade");
 
 	// Routes
-	mainController = require("./routes/index");
+	mainController = require("./routes");
 	app.get("/", mainController.indexAction("index"));
 	app.get("/error", mainController.indexAction(404));
 	app.use(mainController.pageNotFoundAction);
