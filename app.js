@@ -1,45 +1,29 @@
-/*jslint nomen: true */
-/*global require: false, console: false, __dirname: false, process: false */
+/** serve vcard */
 
-/** http-server for vCard app */
-(function (console, require, process, dirname) {
-	"use strict";
+"use strict";
+var pkg = require("./package.json");
+pkg.config = pkg.config || {};
+pkg.config.port = pkg.config.port || "8080";
 
-	var	nconf, express, http, path, serveStatic, app, mainController;
+// Module dependencies (environment)
+var express = require("express");
+var http = require("http");
+var path = require("path");
 
-	// Module dependencies (environment)
-	nconf = require("nconf");
-	express = require("express");
-	http = require("http");
-	path = require("path");
-	serveStatic = require("serve-static");
+// Initialization
+var app = express();
+app.locals.basedir = path.join(__dirname, "/src");
+app.set("port", pkg.config.port);
+app.use(express.static(path.join(__dirname, "public"), {index: false}));
+app.use(express.static(path.join(__dirname, "src"), {index: false}));
+app.set("views", path.join(__dirname, "/src"));
+app.set("view engine", "pug");
+var routes = require(path.join(__dirname, "routes.js"));
+app.get("/", routes.indexAction("index"));
+app.get("/error", routes.indexAction(404));
+app.use(routes.pageNotFoundAction);
 
-	// Read configuration (environment)
-	nconf.argv().env().file({file: path.join(dirname, "/settings.json")}).defaults({
-		"env": "development",
-		"port": 8080
-	});
-	if (!/[0-9]+/.test(nconf.get("port"))) {
-		console.error("Illegal value port! Check your configuration and your settings.json file.");
-		process.exit(1);
-	}
-
-	// Initialization
-	app = express();
-	app.locals.basedir = path.join(dirname, "/static");
-	app.use(serveStatic(path.join(dirname, "/static")));
-	app.set("port", nconf.get("port"));
-	app.set("views", path.join(dirname, "/static"));
-	app.set("view engine", "jade");
-
-	// Routes
-	mainController = require("./routes");
-	app.get("/", mainController.indexAction("index"));
-	app.get("/error", mainController.indexAction(404));
-	app.use(mainController.pageNotFoundAction);
-
-	// Http server
-	http.createServer(app).listen(nconf.get("port"), function () {
-		console.info("Express %s server listening on port %d", nconf.get("env"), nconf.get("port"));
-	});
-}(console, require, process, __dirname));
+// Http server
+http.createServer(app).listen(pkg.config.port, function () {
+	console.info("Express server listening on port %d", pkg.config.port);
+});

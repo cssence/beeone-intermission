@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 			main: {
 				files: [{
 					expand: true,
-					cwd: "static/",
+					cwd: "src/",
 					src: ["*.css", "!*.min.css"],
 					dest: "public/",
 					ext: ".css"
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 			main: {
 				files: [{
 					expand: true,
-					cwd: "static/",
+					cwd: "src/",
 					src: ["*.js", "!*.min.js"],
 					dest: "public/",
 					ext: ".js"
@@ -33,12 +33,12 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// jade compile
-		jade: {
+		// pug compile
+		pug: {
 			compile: {
 				files: {
-					"public/index.html": ["static/index.jade"],
-					"public/404.html": ["static/error.jade"]
+					"public/index.html": ["src/index.pug"],
+					"public/404.html": ["src/error.pug"]
 				}
 			}
 		},
@@ -68,8 +68,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-cssmin");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-jade");
-	grunt.loadNpmTasks("grunt-contrib-copy");
+	grunt.loadNpmTasks("grunt-contrib-pug");
 	grunt.loadNpmTasks("grunt-assets-inline");
 
 	grunt.registerTask(
@@ -80,7 +79,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"release",
 		"Deploys the project (generate HTML and inline assets)",
-		["build", "jade:compile", "assets_inline:html"]
+		["build", "pug:compile", "assets_inline:html"]
 	);
 
 	// Default task(s).
