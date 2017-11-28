@@ -6,7 +6,7 @@
 
 ## Why?
 
-To be used as homepage until an actual homepage comes along, or when said homepage is down.
+The homepage until an actual homepage comes along, or to be used for intermission, i.e. when said actual homepage is down.
 
 ## How?
 
@@ -16,8 +16,8 @@ git subtree push --prefix public origin gh-pages
 
 ## Test
 
-https://developers.google.com/structured-data/testing-tool?url=http%253A%252F%252Fwww.beeone.at%252F
+https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fwww.beeone.at%2F
 
 ## ©
 
-Copyright 2012-2017 [BeeOne GmbH](https://www.beeone.at/).
+Copyright [BeeOne GmbH](https://www.beeone.at/).
